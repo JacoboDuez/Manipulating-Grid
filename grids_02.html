@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        .on{
+            background: orange;
+        }
+        .content{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows:1fr 1fr 1fr 1fr;
+            gap:5px;
+        }
+        div{
+            padding:50px;
+            text-align:center;
+            border-style:solid;
+            font-size:2em;
+        }
+
+    </style>
+</head>
+<body>
+    <button onclick="Move()">Move</button>
+    <main class="content">
+        <div id="S1">1</div>
+        <div id="S2">2</div>
+        <div id="S3">3</div>
+        <div id="S4">4</div>
+        <div id="S5">5</div>
+        <div id="S6">6</div>
+        <div id="S7">7</div>
+        <div id="S8">8</div>
+        <div id="S9">9</div>
+        <div id="S10">10</div>
+        <div id="S11">11</div>
+        <div id="S12">12</div>
+    </main>
+    <script>
+        let timer = null;
+        let counter = 0;
+        function switchID(){
+            const element = document.getElementById('S'+ counter)
+            element.classList.add('on');
+        }
+        function Move(){
+            counter+=1;
+            if (counter <=12){
+                timer = setTimeout(()=>{
+                switchID();
+                Move();
+            },100);}
+        }
+    </script>
+</body>
+</html>

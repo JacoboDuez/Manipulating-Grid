@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        .on{
+            background: orange;
+        }
+        .content{
+            display: grid;
+            grid-template-columns: repeat(10,1fr);
+            grid-template-rows:repeat(10,1fr);
+            gap:1px;
+        }
+        div{
+            padding:10px;
+            text-align:center;
+            border-style:solid;
+            font-size:1em;
+        }
+
+    </style>
+</head>
+<body>
+    <button onclick="Move()">Move</button>
+    <main class="content">
+        <div id="S1">1</div>
+        <div id="S2">2</div>
+        <div id="S3">3</div>
+        <div id="S4">4</div>
+        <div id="S5">5</div>
+        <div id="S6">6</div>
+        <div id="S7">7</div>
+        <div id="S8">8</div>
+        <div id="S9">9</div>
+        <div id="S10">10</div>
+        <div id="S11">11</div>
+        <div id="S12">12</div>
+        <div id="S13">13</div>
+        <div id="S14">14</div>
+        <div id="S15">15</div>
+        <div id="S16">16</div>
+        <div id="S17">17</div>
+        <div id="S18">18</div>
+        <div id="S19">19</div>
+        <div id="S20">20</div>
+        <div id="S21">21</div>
+        <div id="S22">22</div>
+        <div id="S23">23</div>
+        <div id="S24">24</div>
+        <div id="S25">25</div>
+        <div id="S26">26</div>
+        <div id="S27">27</div>
+        <div id="S28">28</div>
+        <div id="S29">29</div>
+        <div id="S30">30</div>
+        <div id="S31">31</div>
+        <div id="S32">32</div>
+        <div id="S33">33</div>
+        <div id="S34">34</div>
+        <div id="S35">35</div>
+        <div id="S36">36</div>
+        <div id="S37">37</div>
+        <div id="S38">38</div>
+        <div id="S39">39</div>
+        <div id="S40">40</div>
+        <div id="S41">41</div>
+        <div id="S42">42</div>
+        <div id="S43">43</div>
+        <div id="S44">44</div>
+        <div id="S45">45</div>
+        <div id="S46">46</div>
+        <div id="S47">47</div>
+        <div id="S48">48</div>
+        <div id="S49">49</div>
+        <div id="S50">50</div>
+        <div id="S51">51</div>
+        <div id="S52">52</div>
+        <div id="S53">53</div>
+        <div id="S54">54</div>
+        <div id="S55">55</div>
+        <div id="S56">56</div>
+        <div id="S57">57</div>
+        <div id="S58">58</div>
+        <div id="S59">59</div>
+        <div id="S60">60</div>
+        <div id="S61">61</div>
+        <div id="S62">62</div>
+        <div id="S63">63</div>
+        <div id="S64">64</div>
+        <div id="S65">65</div>
+        <div id="S66">66</div>
+        <div id="S67">67</div>
+        <div id="S68">68</div>
+        <div id="S69">69</div>
+        <div id="S70">70</div>
+        <div id="S71">71</div>
+        <div id="S72">72</div>
+        <div id="S73">73</div>
+        <div id="S74">74</div>
+        <div id="S75">75</div>
+        <div id="S76">76</div>
+        <div id="S77">77</div>
+        <div id="S78">78</div>
+        <div id="S79">79</div>
+        <div id="S80">80</div>
+        <div id="S81">81</div>
+        <div id="S82">82</div>
+        <div id="S83">83</div>
+        <div id="S84">84</div>
+        <div id="S85">85</div>
+        <div id="S86">86</div>
+        <div id="S87">87</div>
+        <div id="S88">88</div>
+        <div id="S89">89</div>
+        <div id="S90">90</div>
+        <div id="S91">91</div>
+        <div id="S92">92</div>
+        <div id="S93">93</div>
+        <div id="S94">94</div>
+        <div id="S95">95</div>
+        <div id="S96">96</div>
+        <div id="S97">97</div>
+        <div id="S98">98</div>
+        <div id="S99">99</div>
+        <div id="S100">100</div>
+    </main>
+    <script>
+        let timer = null;
+        let counter = 0;
+        function switchID(){
+            if(counter>1){
+                const priorElement = document.getElementById('S' + (counter-1));
+                priorElement.classList.remove('on');
+            }
+            const element = document.getElementById('S'+ counter);
+            element.classList.add('on');
+        }
+        function Move(){
+            counter+=1;
+            if (counter <=100){
+                timer = setTimeout(()=>{
+                switchID();
+                Move();
+            },100);}
+        }
+    </script>
+</body>
+</html>
